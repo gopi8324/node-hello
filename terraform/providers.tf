@@ -38,6 +38,18 @@ security_group_info = {
       protocol    = "tcp"
       description = "open http"
     }
+    {
+      cidr        = "0.0.0.0/0"
+      port        = 8080
+      protocol    = "tcp"
+      description = "open for jenkins"
+    }
+    {
+      cidr        = "0.0.0.0/0"
+      port        = 3000
+      protocol    = "tcp"
+      description = "open for npm"
+    }
   ]
   outbound_rules   = []
   allow_all_egress = true
