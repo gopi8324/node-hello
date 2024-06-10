@@ -46,9 +46,9 @@ resource "aws_vpc_security_group_ingress_rule" "allow" {
   count = (var.security_group_info.outbound_rules)
 
   cidr_ipv4   = var.security_group_info.outbound_rules[count.index].cidr
-  from_port   = var.security_group_info.outbound_rules[count.index].port
+  from_port   = var.security_group_info.outbound_rules[count.index].from_port
   ip_protocol = var.security_group_info.outbound_rules[count.index].protocol
-  to_port     = var.security_group_info.outbound_rules[count.index].port
+  to_port     = var.security_group_info.outbound_rules[count.index].to_port
   description = var.security_group_info.outboud_rules[count.index].description
 }
 resource "aws_internet_gateway" "slim" {
