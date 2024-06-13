@@ -14,7 +14,7 @@ variable "public_subnets" {
   ))
   description = "the public subnets"
 }
-variable "private_subnets" {
+variable "private_subnet" {
   type = list(object({
     name = string,
     cidr = string,
@@ -45,8 +45,8 @@ variable "security_group_info" {
       cidr        = string
       from_port   = number
       protocol    = string
-      description = string
       to_port     = number
+      description = string
     }))
     allow_all_egress = bool
   })
