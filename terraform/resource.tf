@@ -32,7 +32,7 @@ resource "aws_security_group" "all" {
 resource "aws_vpc_security_group_ingress_rule" "all" {
   security_group_id = aws_security_group.all.id
 
-  count = (var.security_group_info.inbound_rules)
+  count = length(var.security_group_info.inbound_rules)
 
   cidr_ipv4   = var.security_group_info.inbound_rules[count.index].cidr
   from_port   = var.security_group_info.inbound_rules[count.index].port
@@ -43,13 +43,12 @@ resource "aws_vpc_security_group_ingress_rule" "all" {
 resource "aws_vpc_security_group_ingress_rule" "allow" {
   security_group_id = aws_security_group.all.id
 
-  count = (var.security_group_info.outbound_rules)
+  count = length(var.security_group_info.outbound_rules)
 
   cidr_ipv4   = var.security_group_info.outbound_rules[count.index].cidr
-  from_port   = var.security_group_info.outbound_rules[count.index].from_port
+  from_port = var.security_group_info.outbound_rules[count.index].from_port
   ip_protocol = var.security_group_info.outbound_rules[count.index].protocol
   to_port     = var.security_group_info.outbound_rules[count.index].to_port
-  description = var.security_group_info.outboud_rules[count.index].description
 }
 resource "aws_internet_gateway" "slim" {
   vpc_id = aws_vpc.network.id
