@@ -14,7 +14,7 @@ variable "public_subnets" {
   ))
   description = "the public subnets"
 }
-variable "private_subnet" {
+variable "private_subnets" {
   type = list(object({
     name = string,
     cidr = string,
