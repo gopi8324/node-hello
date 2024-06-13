@@ -1,5 +1,6 @@
 network_info = {
   name = "ntier"
+  createdby = "Gopi"
   cidr = "192.168.0.0/16"
 }
 public_subnets = [{
@@ -7,23 +8,27 @@ public_subnets = [{
   az   = "ap-south-1a"
   cidr = "192.168.0.0/24"
   }, 
-{
+  {
   name = "web2"
   az   = "ap-south-1b"
   cidr = "192.168.1.0/24"
   }
 ]
-private_subnets = [{
+private_subnet = [{
   name = "db1"
-  az   = "ap-south-1a"
   cidr = "192.168.2.0/24"
-  },
-{
+  az   = "ap-south-1a"
+  }, 
+  {
   name = "db2"
-  az   = "ap-south-1b"
   cidr = "192.168.3.0/24"
+  az   = "ap-south-1b"
   }
 ]
+security_group = [ {
+  name = "slim"
+  description = "for public ip"
+} ]
 security_group_info = {
   name        = "web"
   description = "rule for web server"
@@ -63,5 +68,5 @@ web_instance_info = {
   ami               = "ami-0f58b397bc5c1f2e8"
   subnet_id         = ""
   security_group_id = ""
-  key_name          = "slim"
+  key_name          = "slimk"
 }
