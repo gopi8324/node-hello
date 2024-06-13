@@ -6,7 +6,8 @@ public_subnets = [{
   name = "web1"
   az   = "ap-south-1a"
   cidr = "192.168.0.0/24"
-  }, {
+  }, 
+{
   name = "web2"
   az   = "ap-south-1b"
   cidr = "192.168.1.0/24"
@@ -16,7 +17,8 @@ private_subnets = [{
   name = "db1"
   az   = "ap-south-1a"
   cidr = "192.168.2.0/24"
-  }, {
+  },
+{
   name = "db2"
   az   = "ap-south-1b"
   cidr = "192.168.3.0/24"
@@ -37,13 +39,13 @@ security_group_info = {
       port        = 80
       protocol    = "tcp"
       description = "open http"
-    }
+    },
     {
       cidr        = "0.0.0.0/0"
       port        = 8080
       protocol    = "tcp"
       description = "open for jenkins"
-    }
+    },
     {
       cidr        = "0.0.0.0/0"
       port        = 3000
