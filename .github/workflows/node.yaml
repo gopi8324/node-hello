@@ -1,20 +1,32 @@
-name: Node.js CI/CD
+name: CI/CD Pipeline for hello
+
 on:
   push:
-    branches: [master]
-jobs: 
-  build:
+    branches:
+      - main  # Adjust branch as needed
 
+jobs:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: '10.x'
-      - name: install dependies
-        run: npm install
-      - name: for running
-        run: npm run start
+          node-version: '14'
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npm install node@latest -g
+
+      - name: Build nodejs application
+        run: npm run build
+
+      - name: Test nodejs application
+        run: npm test  # Adjust as per your testing setup
+
       
