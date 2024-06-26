@@ -27,6 +27,7 @@ jobs:
         run: npm run build
 
       - name: Test nodejs application
-        run: npm test  # Adjust as per your testing setup
-
-      
+        run: npm test  
+      - name: for running nodejs
+        run: npm run start
+       
