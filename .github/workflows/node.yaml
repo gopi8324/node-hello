@@ -2,8 +2,7 @@ name: CI/CD Pipeline for hello
 
 on:
   push:
-    branches:
-      - main  # Adjust branch as needed
+    branches: [master]
 
 jobs:
   build:
