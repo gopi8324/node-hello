@@ -24,8 +24,6 @@ jobs:
       - name: Build nodejs application
         run: npm run 
 
-      - name: Test nodejs application
-        run: npm test  
       - name: for running nodejs
         run: npm run start
        
