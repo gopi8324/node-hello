@@ -22,5 +22,4 @@ jobs:
         run: npm install
 
       - name: for running nodejs
-        run: npm run
-       
+        run: npm start
