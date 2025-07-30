@@ -25,5 +25,5 @@ jobs:
         run: npm run 
 
       - name: for running nodejs
-        run: npm run start
+        run: npm run dev
        
